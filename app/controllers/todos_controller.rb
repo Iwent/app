@@ -1,21 +1,23 @@
-class TodoController < ApplicationController
+class TodosController < ApplicationController
   def index
     @todo = Todo.all
     respond_to do |format|
       format.html
       format.json {render json: @todo}
+  
+    end
   end
 
   def update
   end
 
   def todo_params
-    params.require(:todo).permit(:project_id, :title)
+    params.require(:todo).permit(:project_id, :text)
   end
 
   def create
-    @project = Project.find(params[:todo][project_id])
-    @todo = @project.todo.create(todo_params)
+    
+    @todo = Todo.create(todo_params)
     redirect_to projects_path
   end
 end

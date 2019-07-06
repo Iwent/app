@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-resources :projects, :todos
-root 'project#index'
+resources :projects
+resources :todos
+root 'projects#index'
 end
