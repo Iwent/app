@@ -9,6 +9,7 @@
 <% end %>
 </ul>
 <% end %>
+
 <div id = "new_todo" style = "display: none";>
 <h1> Новая задача </h1>
 <%= form_with scope: :todo, id: "new_todoform", url: todos_path, local: true do |form| %>
